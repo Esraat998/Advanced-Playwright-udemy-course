@@ -7,3 +7,10 @@ test('test', async ({ page }) => {
     await expect(page.locator('.added-manually')).toHaveCount(1);
     await page.close();
 })
+
+// Screenshots
+test('Screenshot assertion', async({ page }) => {
+    await page.goto("https://opensource-demo.orangehrmlive.com/");
+    await expect(page).toHaveScreenshot();
+    await page.close();
+})
